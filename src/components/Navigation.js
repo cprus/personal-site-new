@@ -142,8 +142,8 @@ export default () => {
                 </div>
                 <div className="menu">
                 <ResponsiveMenu
-                    menuOpenButton={<i className="fas fa-bars"></i>}
-                    menuCloseButton={<i className="fas fa-times"></i>}
+                    menuOpenButton={<i className="fa fa-bars"></i>}
+                    menuCloseButton={<i className="fa fa-times"></i>}
                     changeMenuOn="50rem"
                     largeMenuClassName="large-menu-classname"
                     smallMenuClassName="small-menu-classname"
