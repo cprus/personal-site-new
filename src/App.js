@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Switch} from 'react-router-dom';
+import HomePage from './components/HomePage';
+import About from './components/About';
+import Contact from './components/Contact';
+import NotFoundPage from './components/NotFoundPage';
+import styled from 'styled-components';
+
+
+const Wrapper = styled.div`
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Wrapper>
+        <Switch>
+          <Route path="/contact" component={Contact} exact={true}/>
+          <Route path="/about" component={About} exact={true}/>
+          <Route path="/" component={HomePage} exact={true}/>
+          <Route component={NotFoundPage}/>
+        </Switch>
+      </Wrapper>
     );
   }
 }
